@@ -11,6 +11,7 @@ using Microsoft.Extensions.DependencyInjection;
 using ProjetoDRG.Data;
 using ProjetoDRG.Models;
 using ProjetoDRG.Services;
+using ProjetoDRG.Extensions;
 
 namespace ProjetoDRG
 {
@@ -40,7 +41,7 @@ namespace ProjetoDRG
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ApplicationDbContext myApplicationDbContext)
         {
             if (env.IsDevelopment())
             {
@@ -52,6 +53,8 @@ namespace ProjetoDRG
             {
                 app.UseExceptionHandler("/Home/Error");
             }
+
+			myApplicationDbContext.Seed();
 
             app.UseStaticFiles();
 

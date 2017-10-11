@@ -13,7 +13,8 @@ namespace ProjetoDRG.Data
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
         {
-        }
+		
+		}
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
@@ -24,7 +25,10 @@ namespace ProjetoDRG.Data
 		   builder.Entity<BancoSistema>()
 		   .HasKey(c => new { c.IdSistema, c.IdBanco});
 
+
+
 		}
+
 
 		public DbSet<ProjetoDRG.Models.Configuracao> Configuracao { get; set; }
 
