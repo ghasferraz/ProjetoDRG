@@ -22,6 +22,7 @@ namespace ProjetoDRG.Controllers
         // GET: Configuracoes
         public async Task<IActionResult> Index()
         {
+			
             return View(await _context.Configuracao.ToListAsync());
         }
 
@@ -64,7 +65,19 @@ namespace ProjetoDRG.Controllers
             }
             return View(configuracao);
         }
-
+		public ActionResult ControlePaginas(IList<Banco> banco, IList<Sistema> sistemas)
+		{
+			if (_context.Configuracao.FirstOrDefault()==null)
+			{
+				return RedirectToAction("Index");
+			}
+			else
+			{
+				return RedirectToAction("Home");
+			}
+			
+			return View(banco);
+		}
         // GET: Configuracoes/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
