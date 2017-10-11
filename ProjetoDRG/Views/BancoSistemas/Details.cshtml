@@ -1,0 +1,30 @@
+﻿@model ProjetoDRG.Models.BancoSistema
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>BancoSistema</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.banco)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.banco.Nome)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.sistema)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.sistema.NomeSistema)
+        </dd>
+    </dl>
+</div>
+<div>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    <a asp-action="Index">Back to List</a>
+</div>

@@ -11,9 +11,10 @@ using System;
 namespace ProjetoDRG.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20171011105533_Criacao das classes para o projeto DRG")]
+    partial class CriacaodasclassesparaoprojetoDRG
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
